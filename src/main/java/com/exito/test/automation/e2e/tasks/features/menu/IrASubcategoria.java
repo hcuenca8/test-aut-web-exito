@@ -32,11 +32,11 @@ public class IrASubcategoria implements Task
 
         actor.attemptsTo(
             Click.on(MenuPortalUI.LNK_CATEGORIA
-                .of(this.parametros.getCategoria())
+                .getTarget(this.parametros.getCategoria())
             ),
 
             Click.on(MenuPortalUI.LNK_SUBCATEGORIA
-                //.of(this.parametros.getSubcategoria())
+                .getTarget(this.parametros.getSubcategoria())
             )
         );
     }
