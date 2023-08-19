@@ -1,7 +1,7 @@
-# 🦾 Automatización de Pruebas E2E - Saucedemo 🦾
+# 🦾 Automatización de Pruebas E2E - Exito.com 🦾
 
 Este proyecto de automatizacion web hecho en Java-Gradle con Serenity-BDD y Screenplay-pattern, 
-refleja los scripts de pruebas automatizacion sobre diferentes funcionalidades/flujos disponibles en la web www.saucedemo.com
+refleja los scripts de pruebas automatizacion sobre diferentes funcionalidades/flujos disponibles en la web www.exito.com
 
 <br>
 
