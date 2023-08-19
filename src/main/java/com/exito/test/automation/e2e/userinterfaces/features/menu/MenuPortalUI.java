@@ -24,14 +24,6 @@ public enum MenuPortalUI implements IUserInterface
         }
     },
 
-//    public static final Target LNK_CATEGORIA=
-//        Target.the("Categoria: {0}")
-//            .locatedBy("//li//div[@class='exito-category-menu-3-x-contentCategory'][.//p[text()='{0}']]");
-//
-//    public static final Target LNK_SUBCATEGORIA=
-//        Target.the("SubCategoria: {0}")
-//            .located(By.linkText("Cabeceros"));
-
     ;
 
     private final String nombre;
