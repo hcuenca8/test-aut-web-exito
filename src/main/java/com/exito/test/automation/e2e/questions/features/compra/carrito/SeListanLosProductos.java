@@ -1,11 +1,13 @@
 package com.exito.test.automation.e2e.questions.features.compra.carrito;
 
+import com.exito.test.automation.e2e.interactions.Detener;
 import com.exito.test.automation.e2e.models.dto.pedido.DetallePedido;
 import com.exito.test.automation.e2e.models.dto.pedido.ProductoPedido;
 import com.exito.test.automation.e2e.questions.javadoc.QuestionsJavaDoc;
 import com.exito.test.automation.e2e.userinterfaces.features.compra.carrito.CarritoCompraUI;
 import com.exito.test.automation.e2e.userinterfaces.general.web.pantalla.ContenidoWebUI;
 import com.exito.test.automation.e2e.utils.parametros.ParamsUtil;
+import com.exito.test.automation.e2e.utils.trazas.TrazaUtil;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -43,24 +45,24 @@ public class SeListanLosProductos implements Question<Boolean>
 
         boolean resultado = true;
 
-        /*
-        HashMap<String, ProductoPedido> hmProductosPedido =
-            (HashMap<String, ProductoPedido>)this.detallePedido.getHmProductos().clone();
-
-        List<WebElementFacade> lstArticulos =
-            CarritoCompraUI.LST_ARTICULOS_CARRITO.getTarget().resolveAllFor(actor);
-        */
         for(ProductoPedido productoPedido : this.detallePedido.getHmProductos().values())
         {
+
             Target articuloCarrito = CarritoCompraUI.ARTICULO_CARRITO.getTarget(productoPedido.getNombre());
             actor.attemptsTo(
-                Scroll.to(articuloCarrito).andAlignToBottom()
+                Scroll.to(articuloCarrito).andAlignToBottom(),
+
+                Detener.por(1).segundos()
             );
 
             WebElementFacade elemento = articuloCarrito.resolveFor(actor);
 
             if(!this.verificaQue(actor,elemento,productoPedido))
             {
+                TrazaUtil.informacion("Producto: {0}, Valor: {1}, Cantidad: {2}, Total: {3}",
+                    productoPedido.getNombre(), productoPedido.getValorPrecio(), productoPedido.getCantidad(),
+                    productoPedido.getTotal());
+
                 resultado = false;
                 break;
             }

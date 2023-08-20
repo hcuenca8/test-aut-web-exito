@@ -42,15 +42,16 @@ public class AgregarArticulo implements Task
                 .andAlignToBottom()
         );
 
+        int cantidad = this.calcularCantidadXArticulo(actor);
+
         if(CompraRapidaUI.BTN_AGREGAR_AL_CARRITO.getTarget().resolveFor(actor).isVisible()){
             actor.attemptsTo(
                 Click.on(CompraRapidaUI.BTN_AGREGAR_AL_CARRITO.getTarget())
             );
+            cantidad--;
         }
 
-        int cantidad = this.calcularCantidadXArticulo(actor);
-
-        for(;cantidad>1;cantidad--)
+        for(;cantidad>0;cantidad--)
         {
             actor.attemptsTo(
                 Detener.por(1).segundos(),

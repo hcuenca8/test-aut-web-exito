@@ -7,6 +7,7 @@ import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 
 /**
@@ -35,7 +36,7 @@ public class PedidoParams
     public DetallePedido getDetalle() {
         if(detalle==null){
             detalle = DetallePedido.builder()
-                .hmProductos(new HashMap<>())
+                .hmProductos(new LinkedHashMap<>())
                 .build();
         }
         return detalle;
