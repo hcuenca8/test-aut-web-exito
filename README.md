@@ -156,39 +156,33 @@ git clone git@github.com:hcuenca8/test-aut-e2e-saucedemo.git
 **Desde shell / terminal dentro del proyecto**
 * **De todos los test**
 ```
-./gradlew clean test --tests "TestTodosRunner"
+./gradlew clean test --tests "com.exito.test.automation.e2e.runners.general.TestTodosRunner"
 ```
 
 * **De un test particular**
 ```
-./gradlew clean test --tests "TestAccesoRunner"
+./gradlew clean test --tests "com.exito.test.automation.e2e.runners.features.menu.TestMenuPortalRunner"
 ```
 ```
-./gradlew clean test --tests "TestCatalogoProductoRunner"
-```
-```
-./gradlew clean test --tests "TestCarritoCompraRunner"
-```
-```
-./gradlew clean test --tests "TestDatosCompradorRunner"
+./gradlew clean test --tests "com.exito.test.automation.e2e.runners.features.catalogo.TestCatalogoProductosRunner"
 ```
 👉🏼 **Aqui, el runner mas completo, y que solicita el ejercicio:**
 ```
-./gradlew clean test --tests "TestPagoCompraRunner"
+./gradlew clean test --tests "com.exito.test.automation.e2e.runners.features.compra.carrito.TestCarritoCompraRunner"
 ```
 
 * **De un grupo de test**
 ``` 
-./gradlew clean test --tests "TestRegresionRunner"
+./gradlew clean test --tests "com.exito.test.automation.e2e.runners.general.TestRegresionRunner"
 ```
 ``` 
-./gradlew clean test --tests "TestHPRunner"
+./gradlew clean test --tests "com.exito.test.automation.e2e.runners.general.TestHPRunner"
 ```
 ``` 
-./gradlew clean test --tests "TestAPRunner"
+./gradlew clean test --tests "com.exito.test.automation.e2e.runners.general.TestAPRunner"
 ```
 ``` 
-./gradlew clean test --tests "TestSmokeRunner"
+./gradlew clean test --tests "com.exito.test.automation.e2e.runners.general.TestSmokeRunner"
 ```
 
 **Desde IDE**
@@ -198,20 +192,14 @@ TestTodosRunner
 ```
 * **De un test particular**
 ```
-TestAccesoRunner
+TestMenuPortalRunner
 ```
 ```
-TestCatalogoProductoRunner
-```
-```
-TestCarritoCompraRunner
-```
-```
-TestDatosCompradorRunner
+TestCatalogoProductosRunner
 ```
 👉🏼 **Aqui, el runner mas completo, y que solicita el ejercicio:**
 ```
-TestPagoCompraRunner
+TestCarritoCompraRunner
 ```
 
 * **De un grupo de test estandar**
@@ -253,8 +241,8 @@ Un ejemplo acerca de la visualizacion y navegacion del reporte, se puede observa
 ## 📬 Ambientes [📚](#menu) 
 	
 * Publico
-    + Ambiente de prueba
-      + 📦 https://www.saucedemo.com/
+    + Ambiente 
+      + 📦 https://www.exito.com/
 
 <br>
 

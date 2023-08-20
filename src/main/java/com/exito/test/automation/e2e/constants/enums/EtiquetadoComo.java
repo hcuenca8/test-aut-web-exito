@@ -5,8 +5,7 @@ public enum EtiquetadoComo
 {
     //Etiquetas en Pantalla
 
-    ADICIONAR("Add to cart"),
-    RETIRAR("Remove"),
+    COMPRA_RAPIDA("Compra rápida"),
     ;
 
     private final String etiqueta;

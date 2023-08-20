@@ -1,7 +1,7 @@
 package com.exito.test.automation.e2e.tasks.features.portal;
 
 import com.exito.test.automation.e2e.tasks.javadoc.TasksJavaDoc;
-import com.exito.test.automation.e2e.userinterfaces.features.portal.ResumenCarritoCompraUI;
+import com.exito.test.automation.e2e.userinterfaces.features.portal.PortalUI;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -27,7 +27,7 @@ public class IrDetalleCarrito implements Task
          * @see TasksJavaDoc#ENLAZAR_ACCIONES
          */
         actor.attemptsTo(
-            Click.on(ResumenCarritoCompraUI.LNK_CARRITO)
+            Click.on(PortalUI.LNK_CARRITO.getTarget())
         );
     }
 

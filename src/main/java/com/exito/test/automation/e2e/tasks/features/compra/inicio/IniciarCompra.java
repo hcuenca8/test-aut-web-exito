@@ -1,20 +1,23 @@
-package com.exito.test.automation.e2e.tasks.features.portal;
+package com.exito.test.automation.e2e.tasks.features.compra.inicio;
 
+import com.exito.test.automation.e2e.models.params.features.compra.inicio.InicioCompraParams;
 import com.exito.test.automation.e2e.tasks.javadoc.TasksJavaDoc;
-import com.exito.test.automation.e2e.userinterfaces.features.portal.PortalUI;
+import com.exito.test.automation.e2e.userinterfaces.features.compra.inicio.InicioCompraUI;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Enter;
 
 /**
  * Para mas informacion:
  * @see TasksJavaDoc#CLASE
  */
 @AllArgsConstructor
-public class IrALMenuPortal implements Task
+public class IniciarCompra implements Task
 {
+    private InicioCompraParams parametros;
 
     /**
      * Para mas informacion:
@@ -28,7 +31,9 @@ public class IrALMenuPortal implements Task
          * @see TasksJavaDoc#ENLAZAR_ACCIONES
          */
         actor.attemptsTo(
-            Click.on(PortalUI.BTN_MENU_PORTAL.getTarget())
+            DiligenciarInicioCompra.deArticulos(this.parametros),
+
+            Click.on(InicioCompraUI.BTN_CONFIRMAR.getTarget())
         );
     }
 
@@ -36,10 +41,11 @@ public class IrALMenuPortal implements Task
      * Para mas informacion:
      * @see TasksJavaDoc#ENLACE
      */
-    public static IrALMenuPortal deOpciones()
+    public static IniciarCompra deArticulos(InicioCompraParams parametros)
     {
        return Tasks.instrumented(
-               IrALMenuPortal.class
+           IniciarCompra.class,
+           parametros
        );
     }
 }

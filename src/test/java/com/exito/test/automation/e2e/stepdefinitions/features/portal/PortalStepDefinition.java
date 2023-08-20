@@ -43,4 +43,19 @@ public class PortalStepDefinition
             IrALMenuPortal.deOpciones()
         );
     }
+
+    /**
+     * Para mas informacion:
+     * @see StepDefinitionsJavaDoc#CUANDO
+     */
+    @Cuando("^ingresa al detalle de su carrito de compras.*")
+    public static void cuandoIngresaAlDetalleDeSuCarritoDeCompras()
+    {
+        /**
+         * @see StepDefinitionsJavaDoc#ENLAZAR_TAREAS
+         */
+        Protagonista.enEscena().attemptsTo(
+            IrDetalleCarrito.deCompra()
+        );
+    }
 }

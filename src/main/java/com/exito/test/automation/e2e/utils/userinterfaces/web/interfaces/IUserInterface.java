@@ -12,7 +12,7 @@ public interface IUserInterface {
      * Para mas informacion:
      * @see UIJavaDoc#TARGET
      */
-    default Target getTarget(String ... parametros)
+    default Target getTarget(Object ... parametros)
     {
         String nombre = ParamsUtil.procesarParametros(this.getNombre(),parametros);
         String stringSelector = ParamsUtil.procesarParametros(this.getStringSelector(),parametros);

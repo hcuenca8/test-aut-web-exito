@@ -1,4 +1,4 @@
-package com.exito.test.automation.e2e.userinterfaces.features.portal;
+package com.exito.test.automation.e2e.userinterfaces.features.compra.inicio;
 
 import com.exito.test.automation.e2e.userinterfaces.javadoc.UIJavaDoc;
 import com.exito.test.automation.e2e.utils.userinterfaces.web.interfaces.IUserInterface;
@@ -6,24 +6,19 @@ import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.targets.TargetBuilder;
 
-public enum PortalUI implements IUserInterface
+/**
+ * Para mas informacion:
+ * @see UIJavaDoc#CLASE
+ */
+public enum InicioCompraUI implements IUserInterface
 {
-    BTN_MENU_PORTAL("Menu portal",
-        "category-menu"
-    ){
-        @Override
-        public Target getStrategy(TargetBuilder target, String stringSelector) {
-            return target.located(By.id(stringSelector));
-        }
-    },
-
-    BTN_RESUMEN_TOTAL_COMPRA("Resumen items",
-        "//div[@class='exito-header-3-x-minicartQuantity'][text()='{0}']"
+    TXT_EMAIL("Email: {0}",
+        "//input[@name='email']"
+    ),
+    BTN_CONFIRMAR("Confirmar",
+        "//button[@type='submit']"
     ),
 
-    LNK_CARRITO("Ir al carrito",
-        "//div[contains(@class,'minicartContainer')]//a[contains(@class,'minicartLink')]"
-    ),
     ;
 
     private final String nombre;
@@ -33,7 +28,7 @@ public enum PortalUI implements IUserInterface
      * Para mas informacion:
      * @see UIJavaDoc#CONSTRUCTOR
      */
-    PortalUI(String nombre, String stringSelector){
+    InicioCompraUI(String nombre, String stringSelector){
         this.nombre = nombre;
         this.stringSelector = stringSelector;
     }
