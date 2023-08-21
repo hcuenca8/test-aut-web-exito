@@ -1,8 +1,8 @@
 package com.exito.test.automation.e2e.utils.tiempo.utils;
 
+import com.exito.test.automation.e2e.utils.GeneralUtil;
 import com.exito.test.automation.e2e.utils.javadoc.JavaDocUtil;
 import com.exito.test.automation.e2e.utils.tiempo.constants.enums.UnidadTiempo;
-import com.exito.test.automation.e2e.utils.GeneralUtil;
 
 /**
  * {{Plantilla para la creacion de clases utilitarias}}

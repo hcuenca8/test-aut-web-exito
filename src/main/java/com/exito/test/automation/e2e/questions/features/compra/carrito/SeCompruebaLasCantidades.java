@@ -7,8 +7,6 @@ import com.exito.test.automation.e2e.userinterfaces.general.web.pantalla.Conteni
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 
-import java.text.DecimalFormat;
-
 /**
  * Para mas informacion:
  * @see QuestionsJavaDoc#CLASE

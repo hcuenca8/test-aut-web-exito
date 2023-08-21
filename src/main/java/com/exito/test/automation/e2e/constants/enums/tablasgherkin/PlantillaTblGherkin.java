@@ -1,10 +1,10 @@
 package com.exito.test.automation.e2e.constants.enums.tablasgherkin;
 
+import com.exito.test.automation.e2e.constants.enums.tablasgherkin.javadoc.TblGherkinJavaDoc;
+import com.exito.test.automation.e2e.models.params.PlantillaParams;
+import com.exito.test.automation.e2e.models.scena.screenplay.Protagonista;
 import com.exito.test.automation.e2e.utils.gherkin.tabla.interfaces.ITablaGherkin;
 import com.exito.test.automation.e2e.utils.gherkin.tabla.utils.TablaGherkinUtil;
-import com.exito.test.automation.e2e.constants.enums.tablasgherkin.javadoc.TblGherkinJavaDoc;
-import com.exito.test.automation.e2e.models.scena.screenplay.Protagonista;
-import com.exito.test.automation.e2e.models.params.PlantillaParams;
 
 
 /**

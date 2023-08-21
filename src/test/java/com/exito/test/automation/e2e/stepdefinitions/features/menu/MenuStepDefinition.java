@@ -2,15 +2,11 @@ package com.exito.test.automation.e2e.stepdefinitions.features.menu;
 
 import com.exito.test.automation.e2e.models.scena.Libreto;
 import com.exito.test.automation.e2e.models.scena.screenplay.Protagonista;
-import com.exito.test.automation.e2e.questions.PlantillaQuestion;
 import com.exito.test.automation.e2e.stepdefinitions.features.portal.PortalStepDefinition;
-import com.exito.test.automation.e2e.stepdefinitions.general.web.pantalla.PantallaStepDefinition;
 import com.exito.test.automation.e2e.stepdefinitions.javadoc.StepDefinitionsJavaDoc;
-import com.exito.test.automation.e2e.tasks.PlantillaTask;
 import com.exito.test.automation.e2e.tasks.features.menu.IrASubcategoria;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
-import net.serenitybdd.screenplay.GivenWhenThen;
 
 /**
  * Para mas informacion:

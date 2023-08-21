@@ -1,7 +1,6 @@
 package com.exito.test.automation.e2e.constants.enums.tablasgherkin.features.compra.inicio;
 
 import com.exito.test.automation.e2e.constants.enums.tablasgherkin.javadoc.TblGherkinJavaDoc;
-import com.exito.test.automation.e2e.models.params.PlantillaParams;
 import com.exito.test.automation.e2e.models.params.features.compra.inicio.InicioCompraParams;
 import com.exito.test.automation.e2e.models.scena.screenplay.Protagonista;
 import com.exito.test.automation.e2e.utils.gherkin.tabla.interfaces.ITablaGherkin;

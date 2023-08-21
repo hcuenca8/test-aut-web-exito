@@ -1,8 +1,8 @@
 package com.exito.test.automation.e2e.models.params;
 
+import com.exito.test.automation.e2e.models.params.javadoc.ParamsJavaDoc;
 import lombok.Builder;
 import lombok.Data;
-import com.exito.test.automation.e2e.models.params.javadoc.ParamsJavaDoc;
 
 
 /**

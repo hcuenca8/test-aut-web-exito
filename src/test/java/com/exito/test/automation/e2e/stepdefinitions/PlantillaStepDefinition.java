@@ -2,8 +2,8 @@ package com.exito.test.automation.e2e.stepdefinitions;
 
 import com.exito.test.automation.e2e.models.scena.screenplay.Protagonista;
 import com.exito.test.automation.e2e.questions.PlantillaQuestion;
-import com.exito.test.automation.e2e.stepdefinitions.javadoc.StepDefinitionsJavaDoc;
 import com.exito.test.automation.e2e.stepdefinitions.general.web.pantalla.PantallaStepDefinition;
+import com.exito.test.automation.e2e.stepdefinitions.javadoc.StepDefinitionsJavaDoc;
 import com.exito.test.automation.e2e.tasks.PlantillaTask;
 import net.serenitybdd.screenplay.GivenWhenThen;
 

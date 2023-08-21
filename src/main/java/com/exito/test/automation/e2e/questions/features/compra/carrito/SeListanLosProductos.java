@@ -5,8 +5,6 @@ import com.exito.test.automation.e2e.models.dto.pedido.DetallePedido;
 import com.exito.test.automation.e2e.models.dto.pedido.ProductoPedido;
 import com.exito.test.automation.e2e.questions.javadoc.QuestionsJavaDoc;
 import com.exito.test.automation.e2e.userinterfaces.features.compra.carrito.CarritoCompraUI;
-import com.exito.test.automation.e2e.userinterfaces.general.web.pantalla.ContenidoWebUI;
-import com.exito.test.automation.e2e.utils.parametros.ParamsUtil;
 import com.exito.test.automation.e2e.utils.trazas.TrazaUtil;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -16,10 +14,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.targets.Target;
-import org.openqa.selenium.By;
-
-import java.util.HashMap;
-import java.util.List;
 
 /**
  * Para mas informacion:

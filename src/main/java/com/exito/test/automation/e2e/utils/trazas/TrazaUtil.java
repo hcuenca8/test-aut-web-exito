@@ -1,8 +1,8 @@
 package com.exito.test.automation.e2e.utils.trazas;
 
-import com.exito.test.automation.e2e.utils.parametros.ParamsUtil;
 import com.exito.test.automation.e2e.utils.GeneralUtil;
 import com.exito.test.automation.e2e.utils.javadoc.JavaDocUtil;
+import com.exito.test.automation.e2e.utils.parametros.ParamsUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

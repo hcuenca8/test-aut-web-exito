@@ -1,10 +1,10 @@
 package com.exito.test.automation.e2e.utils.userinterfaces.web.interfaces;
 
 
+import com.exito.test.automation.e2e.userinterfaces.javadoc.UIJavaDoc;
 import com.exito.test.automation.e2e.utils.parametros.ParamsUtil;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.targets.TargetBuilder;
-import com.exito.test.automation.e2e.userinterfaces.javadoc.UIJavaDoc;
 
 public interface IUserInterface {
 

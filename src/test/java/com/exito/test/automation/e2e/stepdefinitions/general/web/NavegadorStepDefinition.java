@@ -8,7 +8,6 @@ import com.exito.test.automation.e2e.tasks.general.web.portal.EntrarAlPortal;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import net.serenitybdd.screenplay.actors.OnStage;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
 

@@ -1,9 +1,9 @@
 package com.exito.test.automation.e2e.interactions.web.ventana;
 
 
+import com.exito.test.automation.e2e.interactions.Esperar;
 import com.exito.test.automation.e2e.utils.driver.web.WebDriverUtil;
 import com.exito.test.automation.e2e.utils.questions.estadoelementos.constants.enums.EstadoElemento;
-import com.exito.test.automation.e2e.interactions.Esperar;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;

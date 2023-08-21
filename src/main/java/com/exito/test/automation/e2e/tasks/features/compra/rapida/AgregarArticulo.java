@@ -1,14 +1,9 @@
 package com.exito.test.automation.e2e.tasks.features.compra.rapida;
 
-import com.exito.test.automation.e2e.constants.enums.EtiquetadoComo;
-import com.exito.test.automation.e2e.constants.enums.configuracion.Esperas;
 import com.exito.test.automation.e2e.interactions.Detener;
-import com.exito.test.automation.e2e.interactions.Esperar;
 import com.exito.test.automation.e2e.models.params.features.catalogo.PedidoParams;
 import com.exito.test.automation.e2e.tasks.javadoc.TasksJavaDoc;
 import com.exito.test.automation.e2e.userinterfaces.features.compra.rapida.CompraRapidaUI;
-import com.exito.test.automation.e2e.userinterfaces.general.web.pantalla.ContenidoWebUI;
-import com.exito.test.automation.e2e.utils.questions.estadoelementos.constants.enums.EstadoElemento;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

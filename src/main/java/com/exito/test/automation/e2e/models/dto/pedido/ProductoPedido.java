@@ -1,6 +1,5 @@
 package com.exito.test.automation.e2e.models.dto.pedido;
 
-import com.exito.test.automation.e2e.userinterfaces.features.compra.rapida.CompraRapidaUI;
 import lombok.Builder;
 import lombok.Data;
 

@@ -6,6 +6,7 @@ import net.thucydides.core.model.TestOutcome;
 import net.thucydides.core.util.EnvironmentVariables;
 import net.thucydides.core.webdriver.SupportedWebDriver;
 import org.openqa.selenium.MutableCapabilities;
+
 import java.util.Map;
 
 public class Luces implements BeforeAWebdriverScenario {
