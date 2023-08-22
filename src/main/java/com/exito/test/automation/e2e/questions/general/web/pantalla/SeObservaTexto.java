@@ -21,8 +21,6 @@ import java.util.regex.Pattern;
 @Builder
 public class SeObservaTexto implements Question<Boolean>
 {
-
-    //private String textos
     private List<String> textos;
 
     private EstadoElemento este;
@@ -47,31 +45,11 @@ public class SeObservaTexto implements Question<Boolean>
 
         boolean resultado = true;
 
-        for(String validarTexto : this.textos)
+        for(String texto : this.textos)
         {
-            if( validarTexto!=null &&  !validarTexto.isEmpty()  )
+            if( texto!=null &&  !texto.isEmpty()  )
             {
-                IUserInterface lblTexto;
-
-                boolean fueXIndicadorTextoExacto = validarTexto.startsWith(SeObservaTexto.INDICADOR_TEXTO_EXACTO)
-                    && validarTexto.endsWith(SeObservaTexto.INDICADOR_TEXTO_EXACTO);
-
-                if( fueXIndicadorTextoExacto
-                    ||  this.exacto
-                ) {
-                    if(fueXIndicadorTextoExacto){
-                        validarTexto = validarTexto.replaceAll(SeObservaTexto.RGX_INDICADOR_TEXTO_EXACTO,StringUtils.EMPTY);
-                    }
-
-                    lblTexto = ContenidoWebUI.LBL_TEXTO_EXACTO;
-                }else{
-                    lblTexto = ContenidoWebUI.LBL_TEXTO;
-                }
-
-                resultado = ElEstado.deLosElementos(
-                        lblTexto.getTarget(validarTexto)
-                    ).sea(this.este)
-                    .answeredBy(actor);
+                resultado = this.validarTexto(actor,texto);
 
                 if( !resultado ) {
                     break;
@@ -80,6 +58,30 @@ public class SeObservaTexto implements Question<Boolean>
         }
 
         return resultado;
+    }
+
+    private boolean validarTexto(Actor actor,String texto){
+        IUserInterface lblTexto;
+
+        boolean fueXIndicadorTextoExacto = texto.startsWith(SeObservaTexto.INDICADOR_TEXTO_EXACTO)
+            && texto.endsWith(SeObservaTexto.INDICADOR_TEXTO_EXACTO);
+
+        if( fueXIndicadorTextoExacto
+            ||  this.exacto
+        ) {
+            if(fueXIndicadorTextoExacto){
+                texto = texto.replaceAll(SeObservaTexto.RGX_INDICADOR_TEXTO_EXACTO,StringUtils.EMPTY);
+            }
+
+            lblTexto = ContenidoWebUI.LBL_TEXTO_EXACTO;
+        }else{
+            lblTexto = ContenidoWebUI.LBL_TEXTO;
+        }
+
+        return ElEstado.deLosElementos(
+                lblTexto.getTarget(texto)
+            ).sea(this.este)
+            .answeredBy(actor);
     }
 
     /**
