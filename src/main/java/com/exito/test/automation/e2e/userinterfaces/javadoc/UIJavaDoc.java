@@ -10,27 +10,27 @@ import com.exito.test.automation.e2e.utils.GeneralUtil;
 public class UIJavaDoc {
 
     /**
-     * TODO descripcion clase UI
+     * PENDIENTE descripcion clase UI
      */
     public static final String CLASE = null;
 
     /**
-     * TODO descripcion constructor
+     * PENDIENTE descripcion constructor
      */
     public static final String CONSTRUCTOR = null;
 
     /**
-     * TODO descripcion getNombre
+     * PENDIENTE descripcion getNombre
      */
     public static final String NOMBRE = null;
 
     /**
-     * TODO descripcion getStringSelector
+     * PENDIENTE descripcion getStringSelector
      */
     public static final String STRING_SELECTOR = null;
 
     /**
-     * TODO descripcion getTarget
+     * PENDIENTE descripcion getTarget
      */
     public static final String TARGET = null;
 
