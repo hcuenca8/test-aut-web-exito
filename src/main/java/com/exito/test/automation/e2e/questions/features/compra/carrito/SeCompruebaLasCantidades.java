@@ -17,10 +17,11 @@ public class SeCompruebaLasCantidades extends SeListanLosProductos
         super(detallePedido);
     }
 
+    @Override
     protected boolean verificaQue(Actor actor, WebElementFacade elemento,ProductoPedido productoPedido)
     {
         return elemento.containsElements(
-            ContenidoWebUI.LBL_TEXTO_EXACTO.of(
+            ContenidoWebUI.LBL_TEXTO_EXACTO.getTarget(
                 String.valueOf(productoPedido.getCantidad())
             ).getCssOrXPathSelector()
         );

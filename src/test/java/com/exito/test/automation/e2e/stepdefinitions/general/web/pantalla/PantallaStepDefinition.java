@@ -1,6 +1,7 @@
 package com.exito.test.automation.e2e.stepdefinitions.general.web.pantalla;
 
 import com.exito.test.automation.e2e.questions.general.web.pantalla.SeObservaTexto;
+import com.exito.test.automation.e2e.utils.questions.estadoelementos.constants.enums.EstadoElemento;
 import io.cucumber.java.es.Entonces;
 import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -12,7 +13,7 @@ public class PantallaStepDefinition {
     {
         OnStage.theActorInTheSpotlight().should(
                 GivenWhenThen.seeThat(
-                        SeObservaTexto.enPantalla(textos,false)
+                        SeObservaTexto.enPantalla(EstadoElemento.VISIBLE,false,textos)
                 )
         );
     }
@@ -22,7 +23,7 @@ public class PantallaStepDefinition {
     {
         OnStage.theActorInTheSpotlight().should(
             GivenWhenThen.seeThat(
-                SeObservaTexto.enPantalla(textos,true)
+                SeObservaTexto.enPantalla(EstadoElemento.VISIBLE,true,textos)
             )
         );
     }

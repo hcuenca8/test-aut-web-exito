@@ -9,14 +9,14 @@ public enum EstadoElemento {
         @Override
         public boolean esCuando(Actor actor, Target elemento) {
             return elemento.isVisibleFor(actor);
-            //return elemento.resolveFor(actor).isVisible();
+            //return elemento.resolveFor(actor).isVisible()
         }
     },
     NO_VISIBLE {
         @Override
         public boolean esCuando(Actor actor, Target elemento) {
             return !elemento.isVisibleFor(actor);
-            //return !elemento.resolveFor(actor).isVisible();
+            //return !elemento.resolveFor(actor).isVisible()
         }
     },
     HABILITADO {

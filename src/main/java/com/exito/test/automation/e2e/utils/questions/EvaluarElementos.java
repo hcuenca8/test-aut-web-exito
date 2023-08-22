@@ -25,7 +25,8 @@ public abstract class EvaluarElementos implements Question<Boolean>
 
         for (   Target elemento : this.elementos )
         {
-            if  (   !(resultado = this.validaQue(actor,elemento))  ){
+            resultado = this.validaQue(actor,elemento);
+            if  (   !resultado  ){
                 break;
             }
         }

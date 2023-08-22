@@ -15,8 +15,6 @@ public class Esperar
 {
     private Target[] elementos;
 
-    private long tiempo;
-
     private static final long A_SEGUNDOS= 1000;
     private static final long A_MINUTOS= A_SEGUNDOS*60;
     private static final long A_MILISEGUNDOS= 1;
@@ -31,35 +29,35 @@ public class Esperar
         return new Esperar(elementos);
     }
 
-    public _$EsperarHastaQue este(EstadoElemento... estados)
+    public EsperarHastaQue este(EstadoElemento... estados)
     {
-        return new _$EsperarHastaQue(this.elementos, estados);
+        return new EsperarHastaQue(this.elementos, estados);
     }
 
-    public class _$EsperarHastaQue
+    public class EsperarHastaQue
     {
         private Target[] elementos;
 
         private EstadoElemento[] estados;
 
-        private _$EsperarHastaQue(Target[] elementos, EstadoElemento[] estados)
+        private EsperarHastaQue(Target[] elementos, EstadoElemento[] estados)
         {
             this.elementos = elementos;
             this.estados = estados;
         }
 
-        public _$EsperarHastaQueSea porNoMasDe(long tiempo)
+        public EsperarHastaQueSea porNoMasDe(long tiempo)
         {
-            return new _$EsperarHastaQueSea(this.elementos, this.estados, tiempo);
+            return new EsperarHastaQueSea(this.elementos, this.estados, tiempo);
         }
 
-        public class _$EsperarHastaQueSea
+        public class EsperarHastaQueSea
         {
             private Target[] elementos;
             private EstadoElemento[] estados;
             private long tiempo;
 
-            private _$EsperarHastaQueSea(Target[] elementos, EstadoElemento[] estados, long tiempo)
+            private EsperarHastaQueSea(Target[] elementos, EstadoElemento[] estados, long tiempo)
             {
                 this.elementos = elementos;
                 this.estados = estados;
@@ -92,7 +90,6 @@ class EsperarPor /*extends Thread*/ implements Interaction
     private Target[] elementos;
     private EstadoElemento[] estados;
     private long milisegundos;
-    //private boolean detener;
 
     public EsperarPor(Target[] elementos, EstadoElemento[] estados, long milisegundos)
     {
@@ -115,13 +112,13 @@ class EsperarPor /*extends Thread*/ implements Interaction
         public void run()
         {
             this.detener = false;
-            //System.err.println(new SimpleDateFormat("hh:mm:ss").format(new Date()));
+            //System.err.println(new SimpleDateFormat("hh:mm:ss").format(new Date()))
             try {
                 Thread.sleep(this.milisegundos);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
-            //System.err.println(new SimpleDateFormat("hh:mm:ss").format(new Date()));
+            //System.err.println(new SimpleDateFormat("hh:mm:ss").format(new Date()))
             this.detener = true;
         }
 
@@ -137,13 +134,13 @@ class EsperarPor /*extends Thread*/ implements Interaction
         List<Target> lstElementos = Arrays.asList(this.elementos);
         List<Target> lstElementosFinal = new ArrayList<>(lstElementos);
 
-        //this.start();
+        //this.start()
         HiloEspera hilo = new HiloEspera(this.milisegundos);
         hilo.start();
 
         while ( !lstElementosFinal.isEmpty() && !hilo.isDetener())
         {
-            //System.err.println(Arrays.toString(lstElementosFinal.toArray()));
+            //System.err.println(Arrays.toString(lstElementosFinal.toArray()))
             elemento = lstElementosFinal.get(0);
             boolean cumple = true;
             for (   EstadoElemento estado : this.estados   )

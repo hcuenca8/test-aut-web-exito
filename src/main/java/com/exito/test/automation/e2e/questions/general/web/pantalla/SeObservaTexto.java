@@ -4,12 +4,14 @@ import com.exito.test.automation.e2e.questions.javadoc.QuestionsJavaDoc;
 import com.exito.test.automation.e2e.userinterfaces.general.web.pantalla.ContenidoWebUI;
 import com.exito.test.automation.e2e.utils.questions.estadoelementos.constants.enums.EstadoElemento;
 import com.exito.test.automation.e2e.utils.questions.estadoelementos.questions.ElEstado;
+import com.exito.test.automation.e2e.utils.userinterfaces.web.interfaces.IUserInterface;
 import lombok.Builder;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.targets.Target;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Pattern;
 
 /**
@@ -20,7 +22,10 @@ import java.util.regex.Pattern;
 public class SeObservaTexto implements Question<Boolean>
 {
 
-    private String textos;
+    //private String textos
+    private List<String> textos;
+
+    private EstadoElemento este;
 
     private boolean exacto;
 
@@ -40,35 +45,22 @@ public class SeObservaTexto implements Question<Boolean>
          * @see QuestionsJavaDoc#ENLAZAR_VALIDACIONES_VERIFICACIONES
          */
 
-        char chrPrimerCaracter = this.textos.charAt(0);
-        String strPrimerCaracter = String.valueOf(chrPrimerCaracter);
-
-        String separador = Character.isLetterOrDigit(chrPrimerCaracter)
-            || strPrimerCaracter.equals(this.INDICADOR_TEXTO_EXACTO)
-            ? null
-            : Pattern.quote(strPrimerCaracter);
-
-        String[] textos = separador==null
-            ?   new String[]{this.textos}
-            :   this.textos.split(separador)
-            ;
-
         boolean resultado = true;
 
-        for(String validarTexto : textos)
+        for(String validarTexto : this.textos)
         {
             if( validarTexto!=null &&  !validarTexto.isEmpty()  )
             {
-                Target lblTexto;
-                boolean fueXIndicadorTextoExacto;
-                if( (fueXIndicadorTextoExacto =
-                    (   validarTexto.startsWith(this.INDICADOR_TEXTO_EXACTO)
-                        && validarTexto.endsWith(this.INDICADOR_TEXTO_EXACTO)
-                    )
-                ) || this.exacto
-                ){
+                IUserInterface lblTexto;
+
+                boolean fueXIndicadorTextoExacto = validarTexto.startsWith(SeObservaTexto.INDICADOR_TEXTO_EXACTO)
+                    && validarTexto.endsWith(SeObservaTexto.INDICADOR_TEXTO_EXACTO);
+
+                if( fueXIndicadorTextoExacto
+                    ||  this.exacto
+                ) {
                     if(fueXIndicadorTextoExacto){
-                        validarTexto = validarTexto.replaceAll(RGX_INDICADOR_TEXTO_EXACTO,StringUtils.EMPTY);
+                        validarTexto = validarTexto.replaceAll(SeObservaTexto.RGX_INDICADOR_TEXTO_EXACTO,StringUtils.EMPTY);
                     }
 
                     lblTexto = ContenidoWebUI.LBL_TEXTO_EXACTO;
@@ -76,12 +68,12 @@ public class SeObservaTexto implements Question<Boolean>
                     lblTexto = ContenidoWebUI.LBL_TEXTO;
                 }
 
-                if( !ElEstado.deLosElementos(
-                        lblTexto.of(validarTexto)
-                    ).sea(EstadoElemento.VISIBLE)
-                    .answeredBy(actor)
-                ) {
-                    resultado = false;
+                resultado = ElEstado.deLosElementos(
+                        lblTexto.getTarget(validarTexto)
+                    ).sea(this.este)
+                    .answeredBy(actor);
+
+                if( !resultado ) {
                     break;
                 }
             }
@@ -94,10 +86,37 @@ public class SeObservaTexto implements Question<Boolean>
      * Para mas informacion:
      * @see QuestionsJavaDoc#ENLACE
      */
-    public static SeObservaTexto enPantalla(String textos, boolean exacto)
+    public static SeObservaTexto enPantalla(EstadoElemento este, boolean exacto,String texto)
+    {
+        char chrPrimerCaracter = texto.charAt(0);
+        String strPrimerCaracter = String.valueOf(chrPrimerCaracter);
+
+        String separador = Character.isLetterOrDigit(chrPrimerCaracter)
+            || strPrimerCaracter.equals(SeObservaTexto.INDICADOR_TEXTO_EXACTO)
+            ? null
+            : Pattern.quote(strPrimerCaracter);
+
+        List<String> textos = separador==null
+            ?   Arrays.asList(texto)
+            :   Arrays.asList(texto.split(separador))
+            ;
+
+        return SeObservaTexto.builder()
+            .este(este)
+            .textos(textos)
+            .exacto(exacto)
+            .build();
+    }
+
+    /**
+     * Para mas informacion:
+     * @see QuestionsJavaDoc#ENLACE
+     */
+    public static SeObservaTexto enPantalla(EstadoElemento este, boolean exacto, String ... textos)
     {
         return SeObservaTexto.builder()
-            .textos(textos)
+            .este(este)
+            .textos(Arrays.asList(textos))
             .exacto(exacto)
             .build();
     }

@@ -1,8 +1,8 @@
 package com.exito.test.automation.e2e.models.params.javadoc;
 
+import com.exito.test.automation.e2e.constants.enums.tablasgherkin.PlantillaTblGherkin;
 import com.exito.test.automation.e2e.models.scena.Libreto;
 import com.exito.test.automation.e2e.utils.GeneralUtil;
-import com.exito.test.automation.e2e.constants.enums.tablasgherkin.PlantillaTblGherkin;
 
 /**
  * Clase que centraliza la documentacion asociada al concepto de paso-parametros (Params), dentro de la arquitectura

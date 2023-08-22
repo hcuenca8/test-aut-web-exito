@@ -18,24 +18,19 @@ public class Trasladar implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor)
     {
-        //String idPestanyaActual = VentanaUtils.getIdPestanyaActual(actor);
-
         for (   String idPestanya : VentanaUtil.getIdPestanyas(actor)  )
         {
-            //if  (   !idPestanyaActual.equals(idPestanya)  )
-            //{
-                actor.attemptsTo(
-                        Switch.toWindow(idPestanya),
-                        Detener.por(1).segundos()
-                );
-                if  (   this.porTitulo
-                    &&  VentanaUtil.getTituloPestanya(actor).contains(this.contenido)
-                    ||  !this.porTitulo
-                    &&  VentanaUtil.getURLPestanyaActual(actor).contains(this.contenido)
-                ) {
-                    break;
-                }
-            //}
+            actor.attemptsTo(
+                    Switch.toWindow(idPestanya),
+                    Detener.por(1).segundos()
+            );
+            if  (   this.porTitulo
+                &&  VentanaUtil.getTituloPestanya(actor).contains(this.contenido)
+                ||  !this.porTitulo
+                &&  VentanaUtil.getURLPestanyaActual(actor).contains(this.contenido)
+            ) {
+                break;
+            }
         }
     }
 

@@ -19,6 +19,7 @@ public class SeConservanPrecios extends SeListanLosProductos
         super(detallePedido);
     }
 
+    @Override
     protected boolean verificaQue(Actor actor, WebElementFacade elemento,ProductoPedido productoPedido)
     {
         String totalPrecioFormateado =
@@ -26,7 +27,7 @@ public class SeConservanPrecios extends SeListanLosProductos
                 .format(productoPedido.getTotal());
 
         return elemento.containsElements(
-            ContenidoWebUI.LBL_TEXTO.of(
+            ContenidoWebUI.LBL_TEXTO.getTarget(
                     totalPrecioFormateado
             ).getCssOrXPathSelector()
         );
