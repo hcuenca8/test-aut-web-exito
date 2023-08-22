@@ -25,4 +25,9 @@ public class RunnersJavaDoc {
      * @see GeneralUtil#noPermitaInstanciar()
      */
     public static final String CONSTRUCTOR = null;
+
+    private RunnersJavaDoc()
+    {
+        GeneralUtil.noPermitaInstanciar();
+    }
 }

@@ -21,7 +21,7 @@ public class Camerino extends Cast {
 
     private final List<Ability> standardAbilities;
     private final List<Consumer<Actor>> abilityProviders;
-    Map<String, Actor> actors = new HashMap();
+    Map<String, Actor> elenco = new HashMap<>();
 
     private Camerino() {
         this(new Ability[]{});
@@ -32,14 +32,10 @@ public class Camerino extends Cast {
         this.abilityProviders = new ArrayList<>();
     }
 
-    private Camerino(Consumer<Actor>... providers) {
-        this.standardAbilities = new ArrayList<>();
-        this.abilityProviders = asList(providers);
-    }
-
+    @Override
     public Actor actorNamed(String actorName, Ability... abilities) {
 
-        if (! actors.containsKey(actorName)) {
+        if (! elenco.containsKey(actorName)) {
             Actor newActor = Actor.named(actorName);
 
             for(Ability doSomething : abilities) {
@@ -48,22 +44,25 @@ public class Camerino extends Cast {
 
             assignGeneralAbilitiesTo(newActor);
 
-            actors.put(actorName, newActor);
+            elenco.put(actorName, newActor);
         }
-        return actors.get(actorName);
+        return elenco.get(actorName);
     }
 
+    @Override
     public List<Actor> getActors() {
-        return NewList.copyOf(actors.values());
+        return NewList.copyOf(elenco.values());
     }
 
+    @Override
     public void dismissAll() {
-        for (Actor actor : actors.values()) {
+        for (Actor actor : elenco.values()) {
             actor.wrapUp();
         }
-        actors.clear();
+        elenco.clear();
     }
 
+    @Override
     protected void assignGeneralAbilitiesTo(Actor newActor) {
         standardAbilities.forEach(newActor::whoCan);
         abilityProviders.forEach(
@@ -88,17 +87,17 @@ public class Camerino extends Cast {
     }
 
     public Map<String, Actor> getHmActors() {
-        return actors;
+        return elenco;
     }
 
     public Camerino preparaAlProtagonista(String enSuPapel, Actor protagonico)
     {
         Map<String, Actor> hmActors = Camerino.delElenco().getHmActors();
 
-        if  (   !hmActors.containsKey(enSuPapel)  )
-        {
-            hmActors.put(enSuPapel,protagonico);
-        }
+        hmActors.computeIfAbsent(enSuPapel, k -> protagonico);
+
+        //if !hmActors.containsKey(enSuPapel)
+        //  hmActors.put(enSuPapel,protagonico)
 
         return Camerino.delElenco();
     }

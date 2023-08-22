@@ -25,15 +25,14 @@ public class FormatoUtil
 
     private static String reemplazarPorBlancos(String texto)
     {
-        Matcher matcher;
         String id = "\\s";
         String patron = "\\{("+id+"*)\\}";
 
-        if  (   (matcher = Pattern.compile(patron).matcher(texto)).find() )
+        Matcher matcher = Pattern.compile(patron).matcher(texto);
+
+        if( matcher.find()  )
         {
             StringBuffer resultado = new StringBuffer();
-            int min = 0;
-            BigInteger max;
 
             do {
                 matcher.appendReplacement(
@@ -51,11 +50,12 @@ public class FormatoUtil
 
     private static String reemplazarPorNumeroAleatorio(String texto)
     {
-        Matcher matcher;
         String id = "#";
         String patron = "\\{("+id+"+)\\}";
 
-        if  (   (matcher = Pattern.compile(patron).matcher(texto)).find() )
+        Matcher matcher = Pattern.compile(patron).matcher(texto);
+
+        if( matcher.find()  )
         {
             StringBuffer resultado = new StringBuffer();
             int min = 0;
@@ -63,12 +63,11 @@ public class FormatoUtil
 
             do {
                 /**
-                 * TODO
                  * probar utilizando RandomStringUtils.randomNumeric
                  */
                 int totalNum = StringUtils.countMatches(matcher.group(1),id);
                 max = new BigDecimal(matcher.group(1).replace("#","9")).toBigInteger();
-                BigDecimal numero = new BigDecimal(RandomUtils.nextDouble(min,max.doubleValue()));
+                BigDecimal numero = BigDecimal.valueOf(RandomUtils.nextDouble(min,max.doubleValue()));
 
                 matcher.appendReplacement(
                     resultado,
@@ -85,10 +84,11 @@ public class FormatoUtil
 
     private static String reemplazarPorFecha(String texto)
     {
-        Matcher matcher;
-        String patron = "\\{((d|M|y|H|h|m|s)+)\\}";
+        String patron = "\\{([dMyHhms]+)\\}";
 
-        if  (   (matcher = Pattern.compile(patron).matcher(texto)).find() )
+        Matcher matcher = Pattern.compile(patron).matcher(texto);
+
+        if( matcher.find() )
         {
             StringBuffer resultado = new StringBuffer();
 
@@ -102,13 +102,13 @@ public class FormatoUtil
             String segundoFecha = StringUtils.leftPad(String.valueOf(fecha.get(Calendar.SECOND)),2,"0");
 
             do{
-                texto = FormatoUtil.reemplazarPorItemFecha(matcher.group(1),"d",2d,diaFecha);
-                texto = FormatoUtil.reemplazarPorItemFecha(texto,"M",2d,mesFecha);
-                texto = FormatoUtil.reemplazarPorItemFecha(texto,"y",4d,anyoFecha);
-                texto = FormatoUtil.reemplazarPorItemFecha(texto,"H",2d,hora24Fecha);
-                texto = FormatoUtil.reemplazarPorItemFecha(texto,"h",2d,hora12Fecha);
-                texto = FormatoUtil.reemplazarPorItemFecha(texto,"m",2d,minutoFecha);
-                texto = FormatoUtil.reemplazarPorItemFecha(texto,"s",2d,segundoFecha);
+                texto = FormatoUtil.reemplazarPorItemFecha(matcher.group(1),"d",diaFecha);
+                texto = FormatoUtil.reemplazarPorItemFecha(texto,"M",mesFecha);
+                texto = FormatoUtil.reemplazarPorItemFecha(texto,"y",anyoFecha);
+                texto = FormatoUtil.reemplazarPorItemFecha(texto,"H",hora24Fecha);
+                texto = FormatoUtil.reemplazarPorItemFecha(texto,"h",hora12Fecha);
+                texto = FormatoUtil.reemplazarPorItemFecha(texto,"m",minutoFecha);
+                texto = FormatoUtil.reemplazarPorItemFecha(texto,"s",segundoFecha);
 
                 matcher.appendReplacement(resultado,texto);
             }while  ( matcher.find()  );
@@ -120,17 +120,14 @@ public class FormatoUtil
         }
     }
 
-    private static String reemplazarPorItemFecha(String texto, String id, double digitos, String valorItemFecha)
+    private static String reemplazarPorItemFecha(String texto, String id, String valorItemFecha)
     {
         StringBuffer resultado = new StringBuffer();
         Matcher matcher = Pattern.compile("("+id+"+)").matcher(texto);
         boolean idAnyo = id.equals("y");
         while  (   matcher.find()  )
         {
-            //double totalId = StringUtils.countMatches(matcher.group(),id);
             int totalId = StringUtils.countMatches(matcher.group(),id);
-            //int paresId = (int)Math.ceil(totalId/digitos);
-            //String reemplazar = StringUtils.truncate(StringUtils.repeat(valorItemFecha,paresId),(int)totalId);
 
             int offset = idAnyo && totalId<4 ?valorItemFecha.length()-totalId:0;
             String reemplazar = StringUtils.truncate(
@@ -145,23 +142,5 @@ public class FormatoUtil
 
         return resultado.toString();
     }
-
-/*
-    public static void main(String args[]){
-
-        String valor = "ye{}se{ }n{   }{ }ia.v+{'probando_esto'}@reworth{HHmmsshh}.co";
-        //String valor = "yesenia.v+{ddddMMMMdyyy}@reworth{HHmmsshh}.co";
-
-        //Calendar fecha = Calendar.getInstance();
-        //String anyoFecha = String.valueOf(fecha.get(Calendar.YEAR));
-        //System.out.println(anyoFecha);
-        //System.out.println("R/ "+reemplazarPorItemFecha(valor,"y",4d,anyoFecha));
-
-        //System.out.println("R/ "+reemplazarPorFecha(valor));
-
-        System.out.println("R/ "+reemplazarPorBlancos(valor));
-
-    }
-*/
 
 }

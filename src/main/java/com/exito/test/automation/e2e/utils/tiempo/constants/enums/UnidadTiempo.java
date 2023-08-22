@@ -2,9 +2,9 @@ package com.exito.test.automation.e2e.utils.tiempo.constants.enums;
 
 public enum UnidadTiempo {
 
-    SEGUNDOS(1000),
-    MINUTOS(1000*60),
-    MILISEGUNDOS(1),
+    SEGUNDOS(1000L),
+    MINUTOS(1000L*60),
+    MILISEGUNDOS(1L),
     ;
 
     private final long escalaMilisegundos;

@@ -1,6 +1,8 @@
 package com.exito.test.automation.e2e.stepdefinitions.javadoc;
 
 
+import com.exito.test.automation.e2e.utils.GeneralUtil;
+
 /**
  * Clase que centraliza la documentacion asociada al concepto de la definacion de paso (StepDefinitions), en el patron
  * Screenplay
@@ -73,4 +75,9 @@ public class StepDefinitionsJavaDoc {
      *                  (tabla gherkin)
      */
     public static final String PARAMETRO_LIBRETO = null;
+
+    private StepDefinitionsJavaDoc()
+    {
+        GeneralUtil.noPermitaInstanciar();
+    }
 }

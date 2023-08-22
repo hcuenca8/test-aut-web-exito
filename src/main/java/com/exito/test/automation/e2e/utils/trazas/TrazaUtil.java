@@ -13,8 +13,6 @@ import org.slf4j.event.Level;
  */
 public class TrazaUtil
 {
-
-    //public static final String FORMATO = "\tId[{0}]\n\t\t{1}";
     public static final String RGX_ENCONTRAR_METODO = "(?<gr>\\.[^.]+\\.[^.]+)$";
     public static final String RGX_INCLUIR_SALTO_INICIO_METODO = "\n\tTraza: ${gr}";
 
@@ -34,7 +32,7 @@ public class TrazaUtil
 
     public static final String IDENTACION = "\n\t\t";
 
-    public static final String RGX_TERMINA_SALTO_O_TAB = "(\\n|\\t)+$";
+    public static final String RGX_TERMINA_SALTO_O_TAB = "[\\n\\t]+$"; //"(\\n|\\t)+$"
 
     /**
      * Para mas informacion:

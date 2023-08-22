@@ -1,6 +1,8 @@
 package com.exito.test.automation.e2e.questions.javadoc;
 
 
+import com.exito.test.automation.e2e.utils.GeneralUtil;
+
 /**
  * Clase que centraliza la documentacion asociada al concepto de preguntas (Questions), en el patron
  * Screenplay
@@ -30,5 +32,10 @@ public class QuestionsJavaDoc {
      * pregunta (Question)
      */
     public static final String ENLAZAR_VALIDACIONES_VERIFICACIONES = null;
+
+    private QuestionsJavaDoc()
+    {
+        GeneralUtil.noPermitaInstanciar();
+    }
 
 }

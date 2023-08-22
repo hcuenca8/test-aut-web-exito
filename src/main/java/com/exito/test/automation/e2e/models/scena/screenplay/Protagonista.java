@@ -37,12 +37,10 @@ public class Protagonista extends Actor{
             : como;
         Protagonista.principal().assignName(como);
 
-        if  (   estaEnEscena  )
-        {
-            if  (   !como.equalsIgnoreCase(OnStage.theActorInTheSpotlight().getName())  )
-            {
-                estaEnEscena = false;
-            }
+        if  (   estaEnEscena
+            &&  !como.equalsIgnoreCase(OnStage.theActorInTheSpotlight().getName())
+        ) {
+            estaEnEscena = false;
         }
 
         return estaEnEscena;

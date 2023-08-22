@@ -10,10 +10,6 @@ public class Detener
 {
     private long tiempo;
 
-    private static final long A_SEGUNDOS= 1000;
-    private static final long A_MINUTOS= A_SEGUNDOS*60;
-    private static final long A_MILISEGUNDOS= 1;
-
     private Detener(long tiempo)
     {
         this.tiempo = tiempo;
@@ -43,19 +39,16 @@ public class Detener
 
     public DetenerPor segundos()
     {
-        //this.tiempo = this.tiempo * Detener.A_SEGUNDOS;
         return new DetenerPor(this.tiempo,UnidadTiempo.SEGUNDOS);
     }
 
     public DetenerPor minutos()
     {
-        //this.tiempo = this.tiempo * Detener.A_MINUTOS;
         return new DetenerPor(this.tiempo,UnidadTiempo.MINUTOS);
     }
 
     public DetenerPor milisegundos()
     {
-        //this.tiempo = this.tiempo * Detener.A_MILISEGUNDOS;
         return new DetenerPor(this.tiempo,UnidadTiempo.MILISEGUNDOS);
     }
 

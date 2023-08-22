@@ -27,15 +27,12 @@ public class NavegadorStepDefinition {
     @Dado("^que \"(.*)\" ingresó a su navegador.*")
     public static void dadoQueIngresoAlNavegador(String actor)
     {
-        //if  (   !Protagonista.haActuadoPreviamente(actor) )
-        //{
-            Protagonista.haActuadoPreviamente(actor);
-            Protagonista.entraEnEscena(actor)
-                .whoCan(BrowseTheWeb.with(suNavegador))
-                .attemptsTo(
-                    Depurar.enConsola("Inicio del Test")
-                );
-        //}
+        Protagonista.haActuadoPreviamente(actor);
+        Protagonista.entraEnEscena(actor)
+            .whoCan(BrowseTheWeb.with(suNavegador))
+            .attemptsTo(
+                Depurar.enConsola("Inicio del Test")
+            );
     }
 
     @Cuando("^ingresa al portal.*")

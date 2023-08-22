@@ -1,7 +1,10 @@
 package com.exito.test.automation.e2e.tasks.features.portal;
 
+import com.exito.test.automation.e2e.constants.enums.configuracion.Esperas;
+import com.exito.test.automation.e2e.interactions.Esperar;
 import com.exito.test.automation.e2e.tasks.javadoc.TasksJavaDoc;
 import com.exito.test.automation.e2e.userinterfaces.features.portal.PortalUI;
+import com.exito.test.automation.e2e.utils.questions.estadoelementos.constants.enums.EstadoElemento;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -27,6 +30,10 @@ public class IrDetalleCarrito implements Task
          * @see TasksJavaDoc#ENLAZAR_ACCIONES
          */
         actor.attemptsTo(
+            Esperar.hastaQue(PortalUI.LNK_CARRITO.getTarget())
+                .este(EstadoElemento.VISIBLE)
+                .porNoMasDe(Esperas.GENERAL.getTiempo()).segundos(),
+
             Click.on(PortalUI.LNK_CARRITO.getTarget())
         );
     }

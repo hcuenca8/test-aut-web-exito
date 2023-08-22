@@ -20,15 +20,11 @@ public class PlantillaStepDefinition
     //@Dado("^que \"(.*)\" se encuentra {{active la sentencia y adapte la expresion que satisfaga el enunciado gherkin}}.*")
     public static void dadoQueSeEncuentra(String actor/*, Libreto libreto*/)
     {
-        if  (   !Protagonista.haActuadoPreviamente(actor) )
-        {
-            /**
-             * @see StepDefinitionsJavaDoc#ENLAZAR_ESCENA_PREVIA_PANTALLA_ANTERIOR
-             */
-            //{{PantallaAnterior}}StepDefinition.dado{{QueMeEncuentroEnLaPantallaAnterior}}(/*libreto*/);
-            //{{PantallaAnterior}}StepDefinition.cuando{{EjecutoLoQueMePermiteEncontrarmeAqui}}(/*libreto*/);
-
-        }
+        /**
+         * @see StepDefinitionsJavaDoc#ENLAZAR_ESCENA_PREVIA_PANTALLA_ANTERIOR
+         */
+        //{{PantallaAnterior}}StepDefinition.dado{{QueMeEncuentroEnLaPantallaAnterior}}(/*libreto*/);
+        //{{PantallaAnterior}}StepDefinition.cuando{{EjecutoLoQueMePermiteEncontrarmeAqui}}(/*libreto*/);
     }
 
     /**

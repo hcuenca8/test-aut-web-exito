@@ -18,7 +18,7 @@ public enum PortalUI implements IUserInterface
     },
 
     BTN_RESUMEN_TOTAL_COMPRA("Resumen items",
-        "//div[@class='exito-header-3-x-minicartQuantity'][text()='{0}']"
+        "//div[contains(@class,'minicartQuantity')][text()='{0}']"
     ),
 
     LNK_CARRITO("Ir al carrito",

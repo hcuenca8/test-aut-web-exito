@@ -1,6 +1,7 @@
 package com.exito.test.automation.e2e.models.params;
 
 import com.exito.test.automation.e2e.models.params.javadoc.ParamsJavaDoc;
+import com.exito.test.automation.e2e.utils.models.params.interfaces.IParam;
 import lombok.Builder;
 import lombok.Data;
 
@@ -11,7 +12,7 @@ import lombok.Data;
  */
 @Builder
 @Data
-public class PlantillaParams
+public class PlantillaParams implements IParam
 {
 
     private String parametro1;

@@ -12,7 +12,7 @@ import net.serenitybdd.screenplay.Question;
 @Builder
 public class PlantillaQuestion implements Question<Boolean>
 {
-    //private {{TipoParametro}} parametro;
+    //private {{TipoParametro}} parametro
 
     /**
      * Para mas informacion:

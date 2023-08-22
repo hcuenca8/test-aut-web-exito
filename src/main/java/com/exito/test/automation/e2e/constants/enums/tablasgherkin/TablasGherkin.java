@@ -5,6 +5,7 @@ import com.exito.test.automation.e2e.constants.enums.tablasgherkin.features.cata
 import com.exito.test.automation.e2e.constants.enums.tablasgherkin.features.compra.inicio.InicioCompraTblGherkin;
 import com.exito.test.automation.e2e.constants.enums.tablasgherkin.features.menu.MenuPortalTblGherkin;
 import com.exito.test.automation.e2e.utils.gherkin.tabla.interfaces.ITablaGherkin;
+import com.exito.test.automation.e2e.utils.models.params.interfaces.IParam;
 
 public enum TablasGherkin
 {
@@ -13,14 +14,14 @@ public enum TablasGherkin
     INICIO_COMPRA(InicioCompraTblGherkin.values()),
     ;
 
-    private final ITablaGherkin<?>[] tablaGherkin;
+    private final ITablaGherkin<? extends IParam>[] tablaGherkin;
 
-    TablasGherkin(ITablaGherkin<?>[] tablaGherkin)
+    TablasGherkin(ITablaGherkin<? extends IParam>[] tablaGherkin)
     {
         this.tablaGherkin = tablaGherkin;
     }
 
-    public ITablaGherkin<?>[] getTablaGherkin() {
+    public ITablaGherkin<? extends IParam>[] getTablaGherkin() {
         return tablaGherkin;
     }
 }

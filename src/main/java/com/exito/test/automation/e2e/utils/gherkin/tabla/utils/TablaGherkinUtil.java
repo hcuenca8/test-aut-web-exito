@@ -5,6 +5,7 @@ import com.exito.test.automation.e2e.constants.enums.tablasgherkin.TablasGherkin
 import com.exito.test.automation.e2e.models.scena.screenplay.Protagonista;
 import com.exito.test.automation.e2e.utils.formatos.FormatoUtil;
 import com.exito.test.automation.e2e.utils.gherkin.tabla.interfaces.ITablaGherkin;
+import com.exito.test.automation.e2e.utils.models.params.interfaces.IParam;
 
 import java.util.Map;
 import java.util.Set;
@@ -18,9 +19,7 @@ public class TablaGherkinUtil
 
     private Set<String> lstTblGherkin;
 
-    //private final static String PREFIJO_PROPIEDAD_RESUELTA = "RESUELTO_";
-
-    private final static String ID_CAMPO_NULL = "%[NULL]%";
+    private static final String ID_CAMPO_NULL = "%[NULL]%";
 
     private TablaGherkinUtil(Map<String, String> tblGherkin)
     {
@@ -32,7 +31,7 @@ public class TablaGherkinUtil
         return new TablaGherkinUtil(tblGherkin);
     }
 
-    public String obtener(ITablaGherkin columnaTablaGherkin)
+    public String obtener(ITablaGherkin<? extends IParam> columnaTablaGherkin)
     {
         return this.validarFormato(this.tblGherkin,columnaTablaGherkin.getColumna());
     }
@@ -41,14 +40,14 @@ public class TablaGherkinUtil
     {
         String valorFormateado;
 
-        //valorFormateado = StringUtils.trimToEmpty(tblGherkin.get(columnaTablaGherkin));
+        //valorFormateado = StringUtils.trimToEmpty(tblGherkin.get(columnaTablaGherkin))
         valorFormateado = tblGherkin.get(columnaTablaGherkin);
 
         if(   valorFormateado!=null )
         {
-            Matcher matcher;
             String patron = "\\{'(.+)'\\}";
-            if  (   (matcher = Pattern.compile(patron).matcher(valorFormateado)).find() )
+            Matcher matcher = Pattern.compile(patron).matcher(valorFormateado);
+            if  (   matcher.find() )
             {
                 valorFormateado = this.validarFormato(tblGherkin,matcher.group(1));
             }else{
@@ -67,15 +66,11 @@ public class TablaGherkinUtil
         return valorFormateado;
     }
 
-    private Map<String, String> getTblGherkin() {
-        return tblGherkin;
-    }
-
     public void cruzarCon(Map<String, ITablaGherkin<?>> tblsGherkin)
     {
         ITablaGherkin<?> colTblGherkinEncontrada;
 
-        //for (   String columna : this.lstTblGherkin    )
+        //for    String columna : this.lstTblGherkin
         while(!this.lstTblGherkin.isEmpty())
         {
             String columna = this.lstTblGherkin.iterator().next();

@@ -12,4 +12,9 @@ public class JavaDocUtil {
      * @see GeneralUtil#noPermitaInstanciar()
      */
     public static final String CONSTRUCTOR = null;
+
+    private JavaDocUtil()
+    {
+        GeneralUtil.noPermitaInstanciar();
+    }
 }

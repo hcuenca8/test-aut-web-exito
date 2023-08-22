@@ -2,6 +2,7 @@ package com.exito.test.automation.e2e.models.params.features.catalogo;
 
 import com.exito.test.automation.e2e.models.dto.pedido.DetallePedido;
 import com.exito.test.automation.e2e.models.params.javadoc.ParamsJavaDoc;
+import com.exito.test.automation.e2e.utils.models.params.interfaces.IParam;
 import lombok.Builder;
 import lombok.Data;
 
@@ -14,7 +15,7 @@ import java.util.LinkedHashMap;
  */
 @Builder
 @Data
-public class PedidoParams
+public class PedidoParams implements IParam
 {
     private int cantidad;
 

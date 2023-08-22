@@ -1,6 +1,8 @@
 package com.exito.test.automation.e2e.userinterfaces.javadoc;
 
 
+import com.exito.test.automation.e2e.utils.GeneralUtil;
+
 /**
  * Clase que centraliza la documentacion asociada al concepto para localizar elementos (User Interfaces), en el patron
  * Screenplay
@@ -32,5 +34,8 @@ public class UIJavaDoc {
      */
     public static final String TARGET = null;
 
-
+    private UIJavaDoc()
+    {
+        GeneralUtil.noPermitaInstanciar();
+    }
 }

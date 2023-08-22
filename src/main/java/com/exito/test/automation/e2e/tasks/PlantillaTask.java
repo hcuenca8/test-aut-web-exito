@@ -13,7 +13,7 @@ import net.serenitybdd.screenplay.Tasks;
 @AllArgsConstructor
 public class PlantillaTask implements Task
 {
-    //private {{Pantalla}}Params parametros;
+    //private {{Pantalla}}Params parametros
 
     /**
      * Para mas informacion:
@@ -51,10 +51,10 @@ public class PlantillaTask implements Task
      */
     public static PlantillaTask enlace(/*{{Pantalla}}Params parametros*/)
     {
-       return Tasks.instrumented(
-               PlantillaTask.class/*,
+        return Tasks.instrumented(
+            PlantillaTask.class/*,
                parametros
                */
-       );
+        );
     }
 }
