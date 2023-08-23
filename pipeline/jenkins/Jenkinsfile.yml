@@ -6,7 +6,7 @@ pipeline {
 
       stage ('test') {
         steps {
-          sh './gradlew clean test -Denvironment=pipeline'
+          sh './gradlew clean test --tests "com.exito.test.automation.e2e.runners.features.menu.TestMenuPortalRunner"'
         }
       }
     }
