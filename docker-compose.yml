@@ -4,6 +4,8 @@
 #   initialAdminPassword
 #     shell container
 #       cat /var/jenkins_home/secrets/initialAdminPassword
+#   credentials:
+#     jenkins/jenkins
 
 services:
   jenkins:
