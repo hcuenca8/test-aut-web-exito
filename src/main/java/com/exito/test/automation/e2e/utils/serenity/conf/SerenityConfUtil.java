@@ -1,12 +1,13 @@
 package com.exito.test.automation.e2e.utils.serenity.conf;
 
 import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
-import net.thucydides.core.guice.Injectors;
+//import net.thucydides.core.guice.Injectors;
+import net.thucydides.core.environment.SystemEnvironmentVariables;
 import net.thucydides.core.util.EnvironmentVariables;
 
 public class SerenityConfUtil
 {
-    private static EnvironmentVariables propiedades = Injectors.getInjector().getInstance(EnvironmentVariables.class);
+    private static EnvironmentVariables propiedades = SystemEnvironmentVariables.createEnvironmentVariables();//Injectors.getInjector().getInstance(EnvironmentVariables.class);
 
     private static EnvironmentSpecificConfiguration configuracion = EnvironmentSpecificConfiguration.from(SerenityConfUtil.propiedades);
 
@@ -28,5 +29,4 @@ public class SerenityConfUtil
         }
 
     }
-
 }
