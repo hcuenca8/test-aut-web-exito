@@ -6,8 +6,7 @@ pipeline {
 
       stage ('test') {
         steps {
-          //bat 'dir'
-          bat './gradlew clean test --tests "com.exito.test.automation.e2e.runners.features.menu.TestMenuPortalRunner"'
+          sh './gradlew clean test --tests "com.exito.test.automation.e2e.runners.features.menu.TestMenuPortalRunner"'
         }
 
         //https://qaautomation.expert/2023/01/13/how-to-create-jenkins-pipeline-for-serenity-tests/
