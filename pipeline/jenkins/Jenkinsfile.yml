@@ -6,11 +6,11 @@ pipeline {
 
       stage ('test') {
         steps {
-          sh 'sudo apt-get update && apt install wget unzip xvfb'
-          sh 'sudo apt-get install -y libasound2 libnspr4 libnss3 libxss1 xdg-utils unzip libappindicator1 fonts-liberation'
-          sh 'sudo apt-get -f install'
-          sh 'sudo wget http://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
-          sh 'sudo dpkg -i google-chrome*.deb'
+          sh 'su apt-get update && apt install wget unzip xvfb'
+          sh 'su apt-get install -y libasound2 libnspr4 libnss3 libxss1 xdg-utils unzip libappindicator1 fonts-liberation'
+          sh 'su apt-get -f install'
+          sh 'su wget http://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+          sh 'su dpkg -i google-chrome*.deb'
           sh './gradlew clean test --tests "com.exito.test.automation.e2e.runners.features.menu.TestMenuPortalRunner"'
         }
       }
