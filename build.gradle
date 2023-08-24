@@ -42,6 +42,8 @@ dependencies {
     //Otras utilidades
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
+
+    implementation "com.google.guava:guava:${guavaGoogle}"
 }
 
 

@@ -6,7 +6,7 @@ import net.thucydides.core.util.EnvironmentVariables;
 
 public class SerenityConfUtil
 {
-    private static EnvironmentVariables propiedades = SystemEnvironmentVariables.createEnvironmentVariables();//Injectors.getInjector().getInstance(EnvironmentVariables.class);
+    private static EnvironmentVariables propiedades = SystemEnvironmentVariables.createEnvironmentVariables();
 
     private static EnvironmentSpecificConfiguration configuracion = EnvironmentSpecificConfiguration.from(SerenityConfUtil.propiedades);
 
