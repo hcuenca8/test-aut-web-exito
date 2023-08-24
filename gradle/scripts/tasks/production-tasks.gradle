@@ -12,7 +12,7 @@ test {
 
     String vEnvironment = System.getProperty('environment')
 
-    maxParallelForks = 8
+    maxParallelForks = Runtime.runtime.availableProcessors()
 
     testLogging.showStandardStreams = true
 
