@@ -6,7 +6,7 @@ pipeline {
 
       stage ('test') {
         steps {
-          bat 'dir'
+          //bat 'dir'
           bat './gradlew clean test --tests "com.exito.test.automation.e2e.runners.features.menu.TestMenuPortalRunner"'
         }
 
