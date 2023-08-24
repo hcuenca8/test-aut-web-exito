@@ -1,8 +1,11 @@
 package com.exito.test.automation.e2e.utils.serenity.conf;
 
-import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
-import net.thucydides.core.environment.SystemEnvironmentVariables;
-import net.thucydides.core.util.EnvironmentVariables;
+//import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
+//import net.thucydides.core.environment.SystemEnvironmentVariables;
+//import net.thucydides.core.util.EnvironmentVariables;
+import net.serenitybdd.model.environment.EnvironmentSpecificConfiguration;
+import net.thucydides.model.environment.SystemEnvironmentVariables;
+import net.thucydides.model.util.EnvironmentVariables;
 
 public class SerenityConfUtil
 {

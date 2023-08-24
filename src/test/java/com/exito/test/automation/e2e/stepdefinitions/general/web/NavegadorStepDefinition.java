@@ -7,8 +7,9 @@ import com.exito.test.automation.e2e.stepdefinitions.javadoc.StepDefinitionsJava
 import com.exito.test.automation.e2e.tasks.general.web.portal.EntrarAlPortal;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
+import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import net.thucydides.core.annotations.Managed;
+//import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
 
 /**

@@ -1,6 +1,7 @@
 package com.exito.test.automation.e2e.models.scena.screenplay;
 
-import net.serenitybdd.core.collect.NewList;
+//import net.serenitybdd.core.collect.NewList;
+import net.serenitybdd.model.collect.NewList;
 import net.serenitybdd.screenplay.Ability;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actors.Cast;
