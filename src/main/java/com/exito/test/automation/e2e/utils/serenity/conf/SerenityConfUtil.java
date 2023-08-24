@@ -1,7 +1,6 @@
 package com.exito.test.automation.e2e.utils.serenity.conf;
 
 import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
-//import net.thucydides.core.guice.Injectors;
 import net.thucydides.core.environment.SystemEnvironmentVariables;
 import net.thucydides.core.util.EnvironmentVariables;
 
