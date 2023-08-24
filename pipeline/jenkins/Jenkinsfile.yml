@@ -6,6 +6,11 @@ pipeline {
 
       stage ('test') {
         steps {
+          sh 'apt-get update && apt install wget unzip xvfb'
+          sh 'apt-get install -y libasound2 libnspr4 libnss3 libxss1 xdg-utils unzip libappindicator1 fonts-liberation'
+          sh 'apt-get -f install'
+          sh 'wget http://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+          sh 'dpkg -i google-chrome*.deb'
           sh './gradlew clean test --tests "com.exito.test.automation.e2e.runners.features.menu.TestMenuPortalRunner"'
         }
       }
