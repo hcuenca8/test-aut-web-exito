@@ -11,20 +11,20 @@ pipeline {
         }
 
         //https://qaautomation.expert/2023/01/13/how-to-create-jenkins-pipeline-for-serenity-tests/
-//        post {
-//          always {
-//            publishHTML([
-//              allowMissing: false,
-//              alwaysLinkToLastBuild: false,
-//              keepAll: false,
-//              reportDir: 'target/site/serenity/',
-//              reportFiles: 'index.html',
-//              reportName: 'Serenity Report',
-//              reportTitles: '',
-//              useWrapperFileDirectly: true
-//            ])
-//          }
-//        }
+        post {
+          always {
+            publishHTML([
+              allowMissing: false,
+              alwaysLinkToLastBuild: false,
+              keepAll: false,
+              reportDir: 'target/site/serenity/',
+              reportFiles: 'index.html',
+              reportName: 'Serenity Report',
+              reportTitles: '',
+              useWrapperFileDirectly: true
+            ])
+          }
+        }
       }
     }
 }
