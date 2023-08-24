@@ -5,6 +5,9 @@
 /**
  * PROPERTIES
  */
+    //Aplica para Windows, ajustando se separador nativo a el separador estandar
+    System.setProperty('user.dir',System.getProperty('user.dir').replace("\\","/"))
+
     //Url paquete base en formato path "/"
     System.setProperty("build.gradle.project.package.base.url",System.getProperty("gradle.props.project.package.base").replace(".","/"))
     //Hora de Rodaje

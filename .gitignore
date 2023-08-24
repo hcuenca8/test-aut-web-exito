@@ -8,3 +8,5 @@ build/
 .DS_Store
 /out
 
+*.drawio.bkp
+*.drawio.dtmp
