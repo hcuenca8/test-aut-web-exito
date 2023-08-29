@@ -14,7 +14,16 @@ services:
       - "8080:8080"
     volumes:
       - jenkins_home:/var/jenkins_home
-#  ssh-agent:
-#    image: jenkins/ssh-agent
+    networks:
+      - jenkins_network
+
+  chromedriver:
+    image: selenium/standalone-chrome
+    networks:
+      - jenkins_network
+
+networks:
+  jenkins_network:
+
 volumes:
   jenkins_home:

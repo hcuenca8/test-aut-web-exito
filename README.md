@@ -62,30 +62,30 @@ Para mas información, visite:
 
 <div id='arquitectura_estructura_proyecto'/>
 
-## 📂 Estructura de Proyecto [📚](#menu) 
+## 📂 Estructura de Proyecto [📚](#menu)
 
 ### 📁 features: [./src/test/resources/.../]
 >Los escenarios y sus casos de prueba en lenguaje Gherkin (Dado-Cuando-Entonces), con narrativa declarativa en términos de negocio.
 ### 📁 runners: [./src/test/java/.../]
->Clases que permiten ejecutar las pruebas (lanzadores)
+>Clases que permiten ejecutar los features y su equivalente tecnico StepDefinitions.
 ### 📁 setups: [./src/test/java/.../]
->Clases de preparacion y configuracion que se activan al inicio, durante y finalizando un caso de prueba (ideal para Hooks)
+>Clases de preparacion y configuracion que se activan al inicio, durante y finalizando un caso de prueba
 ### 📁 stepdefinitions: [./src/test/java/.../]
 >Clases que traducen tecnicamente los escenarios de los features, orquestando y delegando los pasos necesarios que satisfacen los enunciados Gherkin, a traves de tareas (tasks) o preguntas (questions).
 ### 📁 tasks: [./src/main/java/.../]
 >Clases que describen las actividades que el actor realizara sobre el sistema al interpretar un caso de prueba.
 ### 📁 questions: [./src/main/java/.../]
->Clases que evaluaran el comportamiento debido o esperado, posterior a las actividades de un actor en un caso de prueba,a traves de validaciones y/o verificaciones
+>Clases que evaluaran el comportamiento debido o esperado posterior a las actividades de un actor en un caso de prueba,a traves de validaciones y/o verificaciones
 ### 📁 userinterfaces: [./src/main/java/.../]
->Clases que representan la vista de usuario (pantalla/formulario), que contienen los elementos con los que interactuara directa o indirectamente el actor durante el caso de prueba.
+>Clases que representan la vista de usuario(pantalla/formulario),que contienen los elementos con los que interactuara directa o indirectamente el actor durante el caso de prueba.
 ### 📁 interactions: [./src/main/java/.../]
->Clases que contienen las actividades o conjunto de acciones, de bajo nivel que requiere el actor para interactuar con el sistema.
+>Clases que contienen las actividades de bajo nivel que requiere el actor para interactuar con el sistema.
 ### 📁 models: [./src/main/java/.../]
->Contiene la representación de los objetos de negocio identificados y sus caracteristicas.
+>Contiene la representación de los objetos de negocio identificacdos y sus caracteristicas.
 ### 📁 utils: [./src/main/java/.../]
 >Funciones transversales y utilitarias al proceso o logica de negocio que se despliega en la ejecucion/implementacion de un caso de prueba.
 ### 📁 constants: [./src/main/java/.../]
->Contiene un conjunto de constantes agrupadas y organizadas con base a su comportamiento/proposito.
+>Contiene un grupo de constantes agrupadas por clase que representan un comportamiento.
 
 <br>
 
@@ -96,7 +96,7 @@ Para mas información, visite:
 | Proposito                  | Tecnologias | Herramientas      |
 |----------------------------|-------------|-------------------|
 | BDD                        | Cucumber    | Gherkin           |      
-| Pruebas Automatizadas      | Selenium    | Serenity-BDD      |
+| Pruebas Automatizadas      | Appium      | Serenity-BDD      |
 | Interprete Automatizacion  | Driver      | chrome-driver     |
 | Pruebas                    | JUnit       |                   |
 | Lenguaje de programación   | Java        | JDK/JRE           |
